@@ -1,0 +1,21 @@
+export { IoIosSearch as Icon01 } from 'react-icons/io';
+export { IoIosSettings as Icon02 } from 'react-icons/io';
+export { FaUser as Icon03 } from 'react-icons/fa';
+export { GiCancel as Icon04 } from 'react-icons/gi';
+export { GiHamburgerMenu as Icon05 } from 'react-icons/gi';
+export { TbBellRinging2Filled as Icon06 } from 'react-icons/tb';
+export { MdOutlineHelp as Icon07 } from 'react-icons/md';
+export { IoArrowUp as Icon08 } from 'react-icons/io5';
+export { FaArrowRight as Icon09 } from 'react-icons/fa6';
+export { MdGTranslate as Icon10 } from 'react-icons/md';
+export { BsDisplay as Icon11 } from 'react-icons/bs';
+export { ImStatsDots as Icon12 } from 'react-icons/im';
+export { CgMenuGridR as Icon13 } from 'react-icons/cg';
+export { TiTick as Icon14 } from 'react-icons/ti';
+export { TbError404 as Icon15 } from 'react-icons/tb';
+export { BiSolidError as Icon16 } from 'react-icons/bi';
+export { IoArrowBack as Icon17 } from 'react-icons/io5';
+export { FaHome as Icon18 } from 'react-icons/fa';
+export { IoText as Icon19 } from 'react-icons/io5';
+export { RiHome4Line as Icon20 } from 'react-icons/ri';
+
