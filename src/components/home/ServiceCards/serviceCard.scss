@@ -1,0 +1,160 @@
+.portal-services {
+
+    &-content {
+        background-image: url(../../../../assets/portal-live-products.png);
+        padding-top: 2.5rem;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        height: 850px;
+
+        &-title {
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: $base-color1;
+        }
+
+        &-info {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            color: $base-color1;
+            font-size: 1rem;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+            gap: 1rem;
+
+            button {
+                border-radius: 4px;
+            }
+
+            &-content {
+                width: 250px;
+                height: 350px;
+                background-color: $base-color1;
+
+                &-image {
+                    margin-left: 1.5rem;
+                    margin-top: 35px;
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 4px;
+
+                    svg {
+                        margin-top: 20px;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        color: $base-color1;
+                    }
+                }
+
+                &-header {
+                    font-size: 19px;
+                    color: #172b4e;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    width: 60%;
+                    margin-top: 1.5rem;
+                    margin-left: 1.5rem;
+                    text-align: start;
+                }
+
+                &-message {
+                    width: 60%;
+                    color: #5b6981;
+                    margin-top: 1.5rem;
+                    margin-left: 1.5rem;
+                    font-size: 16px;
+                    line-height: 1.2;
+                    text-align: start;
+                }
+
+                &-btn {
+                    width: 60%;
+                    height: 2.5rem;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    color: #53617B;
+                    border-radius: 3px;
+                    font-size: 14px;
+                    background-color: #ebebeb;
+                    margin-right: 3.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+
+    .portal-services {
+        &-content {
+            height: fit-content;
+            padding-bottom: 25%;
+
+            .service-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+
+                .sentiment-card {
+                    width: fit-content;
+                    height: fit-content;
+                }
+
+                .bots-card {
+                    width: fit-content;
+                    height: fit-content;
+                }
+
+                .translate-card {
+                    width: fit-content;
+                    height: fit-content;
+                }
+
+                .aspect-base-card {
+                    width: fit-content;
+                    height: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767.98px) {
+    .portal-services {
+        &-content {
+            padding-bottom: 40%;
+
+            &-info {
+                text-align: center;
+            }
+
+            .service-cards {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .portal-services {
+        &-content {
+            padding-bottom: 50%;
+
+            &-title {
+                font-size: 30px;
+            }
+
+            &-info {
+                font-size: 15px;
+            }
+        }
+    }
+}

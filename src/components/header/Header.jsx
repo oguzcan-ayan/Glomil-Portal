@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
-import { Icon01, Icon02, Icon03, Icon06, Icon07 } from '../globalIcons/Icons';
+import { Icon01, Icon02, Icon03, Icon04, Icon05, Icon06, Icon07 } from '../globalIcons/Icons';
+import Logo from "../logo/Logo";
 
 function Header() {
 
@@ -15,15 +16,19 @@ function Header() {
 
     const handleResponsiveHeader = () => {
       const innerWidth = window.innerWidth;
-      if (innerWidth && innerWidth <= 768) {
+      if (innerWidth && innerWidth <= 1200) {
         setIsMobile(true);
       }
+      else {
+        setIsMobile(false);
+      }
     }
+    handleResponsiveHeader();
 
-    document.addEventListener("resize", handleResponsiveHeader);
+    window.addEventListener("resize", handleResponsiveHeader);
 
     return () => {
-      document.removeEventListener("resize", handleResponsiveHeader);
+      window.removeEventListener("resize", handleResponsiveHeader);
     }
   }, [])
 
@@ -65,13 +70,15 @@ function Header() {
     return (
       <div className="main-contents">
         {navs.map((nav, index) => (
-          <NavLink
-            key={index}
-            to={nav.path}
-            onClick={() => isMobile && setIsHamburgerButtonOpen(false)}
-          >
-            {nav.name}
-          </NavLink>
+          <button className="main-contents-buttons" key={index}>
+            <NavLink
+              key={index}
+              to={nav.path}
+              onClick={() => isMobile && setIsHamburgerButtonOpen(false)}
+            >
+              {nav.name}
+            </NavLink>
+          </button>
         ))}
       </div>
     );
@@ -91,6 +98,10 @@ function Header() {
 
   const handleSearchClick = () => {
     setSearchVisible(!searchVisible);
+  }
+
+  const handleButtonClick = () => {
+    setIsHamburgerButtonOpen(!isHamburgerButtonOpen);
   }
 
   const renderSearchBox = () => {
@@ -127,32 +138,84 @@ function Header() {
     );
   }
 
-  return (
-    <>
-      <div className='portal-header'>
-        <NavLink to="/">
-          <img className='glomil-logo' src='assets/glomil-logo.png' alt="glomil-site-logo" />
-        </NavLink>
+  if (isMobile) {
+    return (
+      <>
+        <div className="portal-header">
 
-        {renderNavigation(isMobile)}
-        {renderSearchBox()}
+          <div className="portal-header-up">
+            <Logo />
 
-        <div className="user-contents">
-          <Icon06 className="bell-icon" />
-          <Icon07 className="help-icon" />
-          <Icon02 className="settings-icon" />
-          <div className="user-log">
-            <span className="user-active-dot"></span>
-            <Icon03 className="user-icon" />
+            <button
+              className="more-btn"
+              onClick={handleButtonClick}
+            >
+              {isHamburgerButtonOpen ? <Icon04 /> : <Icon05 />}
+            </button>
           </div>
-          <div className="user-info">
-            <span className="username">Glomil</span>
-            <div className="user-mail">glml@glomil.com</div>
-          </div>
+
+          {isHamburgerButtonOpen &&
+            <div className="portal-header-down">
+
+              {renderNavigation(isMobile)}
+
+              <div className="portal-header-down-right">
+
+                {renderSearchBox()}
+
+                <div className="user-contents">
+                  <Icon06 className="bell-icon" />
+                  <Icon07 className="help-icon" />
+                  <Icon02 className="settings-icon" />
+                  <div className="user-log">
+                    <span className="user-active-dot"></span>
+                    <Icon03 className="user-icon" />
+                  </div>
+                  <div className="user-info">
+                    <span className="username">Glomil</span>
+                    <div className="user-mail">glml@glomil.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
+
+  else {
+    return (
+      <>
+        <div className='portal-header'>
+          <div className="portal-header-left">
+            <Logo />
+            {renderNavigation(isMobile)}
+          </div>
+
+          <div className="portal-header-right">
+
+            {renderSearchBox()}
+
+            <div className="user-contents">
+              <Icon06 className="bell-icon" />
+              <Icon07 className="help-icon" />
+              <Icon02 className="settings-icon" />
+              <div className="user-log">
+                <span className="user-active-dot"></span>
+                <Icon03 className="user-icon" />
+              </div>
+              <div className="user-info">
+                <span className="username">Glomil</span>
+                <div className="user-mail">glml@glomil.com</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </>
+    )
+  }
 }
 
 export default Header;

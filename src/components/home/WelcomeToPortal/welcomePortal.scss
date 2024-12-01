@@ -1,0 +1,145 @@
+
+.welcome-to-portal {
+    background-color: #172b4e;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+    &-image {
+        background-image: url(../../../../assets/welcome-portal.png);
+        width: 400px;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+
+        &-title {
+            margin-bottom: 26px;
+            font-size: 2.5rem;
+            color: $base-color1;
+            font-weight: 600;
+        }
+
+        &-info {
+            width: 60%;
+            font-size: 20px;
+            color: $base-color1;
+            line-height: 1.2;
+        }
+    }
+
+    .welcome-button-content {
+        button {
+            height: 2.5rem;
+            cursor: pointer;
+            background-color: #0252CC;
+            border-radius: 2px;
+            color: $base-color1;
+            margin-top: 1.5rem;
+            padding: 10px 15px 15px 15px;
+            font-size: 15px;
+        }
+    }
+}
+
+@media(max-width: 1440px) {
+    .welcome-to-portal {
+        &-image {
+            width: 350px;
+            height: 350px;
+        }
+
+        &-container {
+            &-title {
+                font-size: 35px;
+            }
+
+            &-info {
+                font-size: 18px;
+            }
+        }
+
+        .welcome-button-content {
+            button {
+                padding: 10px 12px 12px 10px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .welcome-to-portal {
+        &-image {
+            width: 300px;
+            height: 300px;
+        }
+
+        &-container {
+            &-title {
+                font-size: 2rem;
+            }
+
+            &-info {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .welcome-to-portal {
+        padding: 20px 40px;
+    }
+}
+
+@media(max-width: 768px) {
+    .welcome-to-portal {
+        flex-direction: column;
+
+        &-image {
+            width: 350px;
+            height: 350px;
+        }
+
+        &-container {
+            align-items: center;
+
+            &-title {
+                margin-bottom: 1.5rem;
+            }
+
+            &-info {
+                width: 75%;
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .welcome-to-portal {
+        &-image {
+            width: 300px;
+            height: 300px;
+        }
+
+        &-container {
+            &-title {
+                font-size: 27px;
+            }
+
+            &-info {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,190 @@
+.sentiment-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10%;
+    min-height: 100vh;
+
+    .service-info {
+        padding: 7rem 5rem 1rem 0;
+        margin-left: 5rem;
+
+        h1 {
+            color: #000f34;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-top: 28px;
+            padding-bottom: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-bottom: 1px solid #d3d2d2;
+        }
+    }
+
+    .query-field {
+        margin-left: 5rem;
+        margin-top: 3rem;
+
+        &-title {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #000f34;
+        }
+
+        &-text-container {
+            display: flex;
+            margin-top: 2.5rem;
+
+            input {
+                width: 100%;
+                padding-top: 12px;
+                padding-bottom: 2rem;
+                padding-left: 0.5rem;
+                border: 2px solid #dadada;
+                background-color: #f5f8fa;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+
+            ::placeholder {
+                color: #7a88a1;
+            }
+
+            .query-btn {
+                font-size: 1rem;
+                height: fit-content;
+                padding: 10px;
+                margin-left: 1rem;
+                margin-top: 0.5rem;
+                border-radius: 3px;
+                text-wrap: nowrap;
+                background-color: #0252CC;
+                color: $base-color1;
+                cursor: pointer;
+            }
+        }
+
+        &-result {
+            width: 30%;
+            height: 4rem;
+            background-color: #cdfde4;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+
+            &-true {
+                display: inline-block;
+                position: relative;
+                width: 1.5rem;
+                height: 1.5rem;
+                background-color: #005C38;
+                top: 20px;
+                left: 1.5rem;
+                border-radius: 50%;
+
+                svg {
+                    position: absolute;
+                    width: 1rem;
+                    height: 1rem;
+                    top: 3px;
+                    left: 4px;
+                    color: $base-color1;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1440px) {
+    .sentiment-container {
+        .service-info {
+            p {
+                line-height: 1.2;
+            }
+        }
+
+        .query-field {
+            padding-right: 1rem;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .sentiment-container {
+        .service-info {
+            margin-left: 3rem;
+        }
+
+        .query-field {
+            margin-left: 3rem;
+
+            &-result {
+                width: 35%;
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .sentiment-container {
+        padding-bottom: 30%;
+
+        .service-info {
+            padding: 5rem 5rem 1rem 0;
+        }
+
+        .query-field {
+            padding-right: 0;
+
+            &-text-container {
+                flex-direction: column;
+
+                input {
+                    width: 75%;
+                }
+
+                .query-btn {
+                    width: fit-content;
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+            }
+
+            &-result {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .sentiment-container {
+        padding-bottom: 40%;
+
+        .service-info {
+            padding-right: 0;
+            margin: 0 1rem 0 1rem;
+            text-align: center;
+        }
+
+        .query-field {
+            margin-left: 0;
+            text-align: center;
+
+            &-text-container {
+                margin-left: 4rem;
+            }
+
+            &-result {
+                margin-left: 4rem;
+                width: 45%;
+
+                &-true {
+                    left: 0;
+                    margin-right: 6rem;
+                }
+            }
+        }
+    }
+}

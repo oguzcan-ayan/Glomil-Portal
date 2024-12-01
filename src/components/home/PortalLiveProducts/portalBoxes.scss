@@ -1,0 +1,120 @@
+.portal-live-products {
+    &-header {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        color: #172b4e;
+        font-weight: 600;
+    }
+
+    &-info {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: rgb(20, 94, 140);
+    }
+
+    &-boxes {
+        width: 35%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 1rem auto 5rem auto;
+
+        .portal-live-box {
+            border: 1px solid black;
+
+            h3 {
+                margin-left: 10px;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                color: #152848;
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            &-messages {
+                margin-left: 10px;
+                line-height: 1.2;
+                color: #2F4160;
+
+                div {
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    gap: 4px;
+
+                    a {
+                        text-decoration: underline;
+                        color: $color1;
+                        cursor: pointer;
+                    }
+
+                    .service-arrow-content {
+                        margin-top: 5px;
+
+                        .service-arrow {
+                            color: $color1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1440px) {
+    .portal-live-products {
+        &-boxes {
+            width: 50%;
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .portal-live-products {
+        &-boxes {
+            width: 75%;
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .portal-live-products {
+        &-boxes {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .portal-live-products {
+
+        &-info {
+            text-align: center;
+        }
+
+        &-boxes {
+            width: 60%;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .portal-live-products {
+        &-header {
+            font-size: 28px;
+        }
+
+        &-info {
+            font-size: 14px;
+        }
+
+        &-boxes {
+            width: 75%;
+        }
+    }
+}

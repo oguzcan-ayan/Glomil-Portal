@@ -1,0 +1,122 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-right: 2px solid #d6d6d6;
+    padding-right: 2rem;
+
+    &-title {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        color: #5F6C84;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 26px;
+
+        button {
+            width: fit-content;
+
+            a {
+                color: $base-color2;
+            }
+        }
+
+        &-services {
+            margin-bottom: 1.5rem;
+            display: flex;
+            cursor: pointer;
+
+            &-icon {
+                svg {
+                    width: 2rem;
+                    height: 1.5rem;
+                }
+            }
+
+            &-title {
+                margin-left: 14px;
+                color: #2A3B5C;
+                font-size: 17px;
+                font-weight: 500;
+                transition: 300ms all;
+                width: max-content;
+            }
+
+            :hover {
+                color: darkblue;
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    .sidebar {
+        padding-right: 0;
+
+        &-title {
+            margin-left: 1rem;
+        }
+
+        &-container {
+            margin-left: 13px;
+
+            &-services {
+                margin-bottom: 20px;
+
+                &-icon {
+                    svg {
+                        width: 30px;
+                        height: 22px;
+                    }
+                }
+
+                &-title {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767.98px) {
+    .sidebar {
+        border-right: none;
+        width: 100%;
+        align-items: center;
+        margin-top: 3rem;
+        padding-top: 0;
+        padding-right: 0;
+
+        &-title {
+            margin-left: 0;
+        }
+
+        &-container {
+            align-items: center;
+            margin-left: 0;
+
+            &-services {
+                flex-direction: column;
+
+                &-icon {
+                    svg {
+                        width: 2rem;
+                        height: 1.5rem;
+                    }
+                }
+
+                &-title {
+                    margin-left: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

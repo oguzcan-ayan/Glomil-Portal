@@ -2,19 +2,24 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Footer() {
+
+    const buttonPassive = () => {
+        alert("Button passive. Content not found...");
+    }
+
     return (
         <>
             <div className='footer-content'>
 
-                <NavLink to="/">@ 2024 Glomil Portal</NavLink>
+                <button className='footer-content-home-btn'><NavLink to="/">@ 2024 Glomil Portal</NavLink></button>
 
-                <span>Careers</span>
+                <span onClick={buttonPassive}>Careers</span>
 
-                <span>Trademark</span>
+                <span onClick={buttonPassive}>Trademark</span>
 
-                <span>Privacy</span>
+                <span onClick={buttonPassive}>Privacy</span>
 
-                <span>License</span>
+                <span onClick={buttonPassive}>License</span>
 
             </div>
         </>

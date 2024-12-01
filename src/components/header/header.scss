@@ -1,13 +1,518 @@
-.portal-header {}
+.portal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px 0 20px;
+    border-bottom: 1px solid #dedede;
+    background-color: $base-color1;
+    box-shadow: 1px 2px 5px 2px #E7E9ED;
+
+    &-left {
+        display: flex;
+        gap: 20%;
+
+        .logo-btn {
+            a {
+                .logo {
+                    width: 200px;
+                    cursor: pointer;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+        }
+
+        .main-contents {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            :hover {
+                text-decoration: underline;
+            }
+
+            &-buttons {
+                font-size: large;
+                font-weight: 500;
+
+                a {
+                    color: #3B4B68;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-right {
+        display: flex;
+
+        .searchbox {
+            position: relative;
+            margin-top: 1rem;
+
+            .search-icon {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 8px;
+                left: 10px;
+                color: grey;
+            }
+
+            input {
+                border: 2px solid #E2E4E8;
+                border-radius: 7px;
+                padding: 7px 0 7px 2.5rem;
+                font-size: 15px;
+                cursor: pointer;
+            }
+
+            .searchbox-info {
+                display: flex;
+                padding: 10px 15px;
+                width: 100%;
+                flex-direction: column;
+                position: absolute;
+                margin-top: 5px;
+                background-color: $base-color1;
+                box-shadow: 1px 1px 2px 0px gray;
+                border-radius: 4px;
+
+                a {
+                    button {
+                        width: 100%;
+                        background-color: $base-color1;
+                        color: #3B4B68;
+                        cursor: pointer;
+                        border-radius: 3px;
+                        font-size: 1rem;
+                        margin-top: 5px;
+                    }
+
+                    :hover {
+                        background-color: #ebebeb;
+                    }
+                }
+            }
+        }
+
+        .user-contents {
+            margin-left: 2rem;
+            display: flex;
+            align-items: center;
+
+            .bell-icon {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: rgb(0, 50, 100);
+                opacity: 0.9;
+                margin-right: 28px;
+                cursor: pointer;
+            }
+
+            .help-icon {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: rgb(0, 50, 100);
+                opacity: 0.9;
+                margin-right: 28px;
+                cursor: pointer;
+            }
+
+            .settings-icon {
+                width: 1.5rem;
+                height: 1.5rem;
+                color: rgb(0, 50, 100);
+                opacity: 0.9;
+                margin-right: 28px;
+                cursor: pointer;
+            }
+
+            .user-log {
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: rgb(79, 121, 149);
+                border-radius: 50%;
+                opacity: 0.5;
+                position: relative;
+                cursor: pointer;
+
+                .user-active-dot {
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    background-color: rgb(0, 169, 0);
+                    border: 2px solid $base-color1;
+                    border-radius: 50%;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                .user-icon {
+                    width: 28px;
+                    height: 28px;
+                    color: $base-color1;
+                    margin-left: 6px;
+                    margin-top: 5px;
+                }
+            }
+
+            .user-info {
+                margin-left: 1rem;
+
+                .username {
+                    cursor: pointer;
+                    font-size: 17px;
+                    color: #0C2345;
+                }
+
+                .user-mail {
+                    margin-top: 0.5rem;
+                    font-size: 14px;
+                    cursor: pointer;
+                    color: #7D879A;
+                }
+            }
+        }
+    }
+}
 
 
 
-@media(max-width: 1440px) {}
+@media(max-width: 1440px) {
+    .portal-header {
+        padding: 10px 40px 0 10px;
 
-@media(max-width: 1200px) {}
+        &-left {
+            gap: 10%;
 
-@media(max-width: 992px) {}
+            .logo-btn {
+                a {
+                    .logo {
+                        width: 180px;
+                    }
+                }
+            }
 
-@media(max-width: 768px) {}
+            .main-contents {
+                gap: 5px;
 
-@media(max-width: 576px) {}
+                &-buttons {
+                    font-size: medium;
+                }
+            }
+        }
+
+        &-right {
+            .searchbox {
+                .search-icon {
+                    width: 18px;
+                    height: 18px;
+                    top: 7px;
+                }
+
+                input {
+                    font-size: 14px;
+                    padding: 6px 0 6px 35px;
+                }
+            }
+
+            .user-contents {
+                margin-left: 1.5rem;
+
+                .bell-icon {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 22px;
+                }
+
+                .help-icon {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 22px;
+                }
+
+                .settings-icon {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 22px;
+                }
+
+                .user-log {
+                    width: 35px;
+                    height: 35px;
+
+                    .user-active-dot {
+                        width: 13px;
+                        height: 13px;
+                    }
+
+                    .user-icon {
+                        width: 26px;
+                        height: 26px;
+                        margin-left: 4px;
+                        margin-top: 4px;
+                    }
+                }
+
+                .user-info {
+                    margin-left: 10px;
+
+                    .username {
+                        font-size: 1rem;
+                    }
+
+                    .user-mail {
+                        margin-top: 6px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media(max-width: 1200px) {
+    .portal-header {
+        display: block;
+        padding: 10px 20px 0 10px;
+
+        &-up {
+            display: flex;
+            justify-content: space-between;
+
+            .logo-btn {
+                a {
+                    .logo {
+                        width: 200px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                }
+            }
+
+            .more-btn {
+                font-size: 28px;
+                color: #3B4B68;
+            }
+
+        }
+
+        &-down {
+            display: flex;
+            justify-content: space-between;
+
+            .main-contents {
+                display: flex;
+
+                &-buttons {
+                    font-size: large;
+                    font-weight: 500;
+                    margin-left: 1rem;
+
+                    a {
+                        color: #3B4B68;
+                    }
+                }
+            }
+
+            &-right {
+                display: flex;
+
+                .searchbox {
+                    position: relative;
+                    margin-top: 13px;
+                    padding-bottom: 10px;
+
+                    .search-icon {
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        top: 8px;
+                        left: 10px;
+                        color: grey;
+                    }
+
+                    input {
+                        border: 2px solid #E2E4E8;
+                        border-radius: 7px;
+                        padding: 7px 0 7px 2.5rem;
+                        font-size: 15px;
+                    }
+
+                    .searchbox-info {
+                        display: flex;
+                        padding: 10px 15px;
+                        width: 100%;
+                        flex-direction: column;
+                        position: absolute;
+                        margin-top: 5px;
+                        background-color: $base-color1;
+                        box-shadow: 1px 1px 2px 0 gray;
+
+                        a {
+                            button {
+                                width: 100%;
+                                background-color: $base-color1;
+                                color: #3B4B68;
+                                border-radius: 3px;
+                                font-size: 1rem;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .user-contents {
+                    margin-left: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    .bell-icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        color: rgb(0, 50, 100);
+                        opacity: 0.9;
+                        margin-right: 20px;
+                    }
+
+                    .help-icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        color: rgb(0, 50, 100);
+                        opacity: 0.9;
+                        margin-right: 20px;
+                    }
+
+                    .settings-icon {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        color: rgb(0, 50, 100);
+                        opacity: 0.9;
+                        margin-right: 20px;
+                    }
+
+                    .user-log {
+                        display: inline-block;
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        background-color: rgb(79, 121, 149);
+                        border-radius: 50%;
+                        opacity: 0.5;
+                        position: relative;
+
+                        .user-active-dot {
+                            width: 15px;
+                            height: 15px;
+                            position: absolute;
+                            background-color: rgb(0, 169, 0);
+                            border: 2px solid $base-color1;
+                            border-radius: 50%;
+                            bottom: 0;
+                            right: 0;
+                        }
+
+                        .user-icon {
+                            width: 28px;
+                            height: 28px;
+                            color: $base-color1;
+                            margin-left: 6px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .user-info {
+                        margin-left: 0.5rem;
+
+                        .username {
+                            font-size: 17px;
+                            color: #0C2345;
+                        }
+
+                        .user-mail {
+                            margin-top: 0.5rem;
+                            font-size: 14px;
+                            cursor: pointer;
+                            color: #7D879A;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media(max-width: 1024px) {
+    .portal-header {
+
+        &-down {
+            .main-contents {
+                display: none;
+            }
+
+            &-right {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
+
+                .searchbox {
+                    margin-left: 1.5rem;
+
+                    input {
+                        padding: 6px 0 6px 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media(max-width: 768px) {
+    .portal-header {
+        padding: 10px 20px 0 10px;
+
+        &-down {
+            &-right {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+
+                .searchbox {
+                    margin-left: 0;
+
+                    .searchbox-info {
+                        z-index: 2;
+                    }
+                }
+
+                .user-contents {
+                    margin-left: 4rem;
+                    padding-bottom: 10px;
+
+                    .user-info {
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    .portal-header {
+        &-down {
+            &-right {
+                .user-contents {
+                    margin-left: 0;
+
+                    .user-info {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,8 +5,10 @@ import { Outlet } from 'react-router-dom';
 function ServicesLayout() {
     return (
         <>
-            <Sidebar />
-            <Outlet />
+            <div className='services-layout'>
+                <Sidebar />
+                <Outlet />
+            </div>
         </>
     )
 }
